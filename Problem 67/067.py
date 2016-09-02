@@ -1,4 +1,4 @@
-a = [[int(number) for number in numberString.split(' ')] for numberString in open("data.txt").read().split('\n')]
+a = [[int(number) for number in numberString.split(' ')] for numberString in open("data_067.txt").read().split('\n')]
 
 for i in range(1, len(a)):
     a[i][0] += a[i - 1][0]
