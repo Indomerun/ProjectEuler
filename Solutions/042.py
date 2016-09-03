@@ -1,0 +1,1 @@
+print(len([num for num in [sum([ord(char)-64 for char in word]) for word in open("../Data/data_042.txt").read().replace('"', "").split(',')] if num in [n*(n+1)//2 for n in range(1,30)]]))
