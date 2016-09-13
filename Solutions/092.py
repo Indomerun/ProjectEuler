@@ -22,7 +22,7 @@ def nPermutations(n):
             j += 1
             if j == nDigits:
                 break
-        perm /= math.factorial(j-idx)
+        perm //= math.factorial(j-idx)
         idx = j
     return perm
 
