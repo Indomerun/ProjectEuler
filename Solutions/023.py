@@ -4,27 +4,25 @@ def getDivisors(n):
     sqrt_n = math.sqrt(n)
     divisors = []
     for i in range(2, int(sqrt_n)+1):
-        if n%i == 0:
-            if i == sqrt_n:
-                divisors.append(i)
-            else:
-                divisors.append(i)
+        if n % i == 0:
+            divisors.append(i)
+            if i != sqrt_n:
                 divisors.append(n//i)
     return divisors
 
 limit = 28123
-abundant = [0]*limit
-for i in range(12,limit):
-    if abundant[i] == 0:
+abundant = [False]*limit
+for i in range(12, limit):
+    if not abundant[i]:
         if sum(getDivisors(i))+1 > i:
             n = i
             while n < limit:
-                abundant[n] = 1
+                abundant[n] = True
                 n += n
 
 abundantList = []
 for i in range(limit):
-    if abundant[i] == 1:
+    if abundant[i]:
         abundantList.append(i)
 
 sumOfAbundant = []
